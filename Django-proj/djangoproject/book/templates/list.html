@@ -1,0 +1,10 @@
+<div>
+    {% for b in book %}
+       <h3><b>{{b.title}}</b></h3>
+       <p>{{b.description}}</p>
+       <em>{{b.author}}</em><br>
+       <br>
+       <a href = "/demo/update">Edit</a> || <a href="/demo/{{book.id}}/delete">Delete</a>   
+       <hr> 
+    {%endfor%}
+</div>
