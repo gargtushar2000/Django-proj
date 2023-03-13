@@ -1,0 +1,6 @@
+
+<form method = "POST" style="margin:50px;" >
+    {% csrf_token %}
+    {{form.as_div}}
+    <input type = 'submit' name = 'submit' style="color:red;margin-top: 30px" value="Submit">
+</form>
