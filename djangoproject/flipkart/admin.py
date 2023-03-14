@@ -1,3 +1,4 @@
+
 from django.contrib import admin
 from .models import Flipkart
 
@@ -7,9 +8,10 @@ from .models import Flipkart
 
 
 
-class FlipAdmin(admin.ModelAdmin):
-    list_display = ['Product Name','Price','Quantity','is_ordered']
-    search_fields = ['Product Name']   
+class FlipkartAdmin(admin.ModelAdmin):
+    list_display = ['prod_name','prod_price','prod_quantity','is_ordered']
+    search_fields = ['prod_name']   
 
    
-admin.site.register(Flipkart,FlipAdmin)
+admin.site.register(Flipkart,FlipkartAdmin)
+

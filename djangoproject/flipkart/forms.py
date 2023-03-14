@@ -11,4 +11,7 @@ class RegisterForms(forms.Form):
 class FlipForm(forms.ModelForm):
     class Meta:
         model = Flipkart
-        fields = ['Product Name','Price','Quantity','is_ordered']
+        fields = ['prod_name','prod_price','prod_quantity','is_ordered']
+
+
+
