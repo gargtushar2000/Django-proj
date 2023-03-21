@@ -22,7 +22,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from book.views import create_book,list_book,update_book,delete_book
-from flipkart.views import add_cart,p_detail
+from flipkart.views import add,p_detail,add_to_cart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('demo/list', list_book),
     path('demo/<int:pk>/update', update_book),
     path('demo/<int:pk>/delete', delete_book),
-    path('flipkart/add', add_cart),
-    path('flipkart/product', p_detail)
+    path('flipkart/add', add),
+    path('flipkart/product', p_detail),
+    path('flipkart/cart', add_to_cart)
 ]

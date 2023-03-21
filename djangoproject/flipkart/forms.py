@@ -11,7 +11,11 @@ class RegisterForms(forms.Form):
 class FlipForm(forms.ModelForm):
     class Meta:
         model = Flipkart
-        fields = ['prod_name','prod_price','prod_quantity','is_ordered']
+        fields = ['prod_name','prod_price','prod_quantity']
 
 
 
+
+class AddUser(forms.Form):
+    username = forms.CharField(max_length=25,label='Enter the name of User')
+    password = forms.CharField(widget=forms.PasswordInput)

@@ -9,7 +9,7 @@ from .models import Flipkart
 
 
 class FlipkartAdmin(admin.ModelAdmin):
-    list_display = ['prod_name','prod_price','prod_quantity','is_ordered']
+    list_display = ['prod_name','prod_price','prod_quantity']
     search_fields = ['prod_name']   
 
    

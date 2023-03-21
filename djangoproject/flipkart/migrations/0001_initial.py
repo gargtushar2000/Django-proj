@@ -16,9 +16,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('prod_name', models.CharField(max_length=100)),
-                ('prod_price', models.CharField(max_length=50)),
-                ('prod_quantity', models.CharField(max_length=50)),
-                ('is_ordered', models.BooleanField(default=False)),
+                ('prod_price', models.IntegerField()),
+                ('prod_quantity', models.IntegerField())
+                
             ],
         ),
     ]
+
+
