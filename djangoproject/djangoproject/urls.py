@@ -16,21 +16,24 @@ Including another URLconf
 
 
 
-
-
-
 from django.contrib import admin
 from django.urls import path
-from book.views import create_book,list_book,update_book,delete_book
-from flipkart.views import add,p_detail,add_to_cart
+from book.views import create_book, list_book, update_book, delete_book
+from flipkart.views import add, p_detail, add_user, create_user, login_user, logout_user, home_page #index
 
 urlpatterns = [
+    path('', home_page,name = 'homepage'),
     path('admin/', admin.site.urls),
     path('demo/create', create_book),
     path('demo/list', list_book),
     path('demo/<int:pk>/update', update_book),
     path('demo/<int:pk>/delete', delete_book),
+    
     path('flipkart/add', add),
     path('flipkart/product', p_detail),
-    path('flipkart/cart', add_to_cart)
+    path('flipkart/create', create_user),
+    path('flipkart/add_user', add_user),
+    path('flipkart/login', login_user),
+    path('flipkart/logout', logout_user),
+    #path('flipkart/index', index)
 ]
