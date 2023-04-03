@@ -19,7 +19,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from book.views import create_book, list_book, update_book, delete_book
-from flipkart.views import add, p_detail, add_user, create_user, login_user, logout_user, home_page #index
+from flipkart.views import add,p_detail,add_user,create_user,login_user,logout_user,home_page,listing
+from flipkart.views import Product, ProductRetrieve, Destroy
+
+
 
 urlpatterns = [
     path('', home_page,name = 'homepage'),
@@ -35,5 +38,9 @@ urlpatterns = [
     path('flipkart/add_user', add_user),
     path('flipkart/login', login_user),
     path('flipkart/logout', logout_user),
-    #path('flipkart/index', index)
+    path('flipkart/list', listing),
+
+    path('create_view', Product.as_view()),
+    path('retrieve/<int:pk>', ProductRetrieve.as_view()),
+    path('destroy/<int:pk>', Destroy.as_view())
 ]

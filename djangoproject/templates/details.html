@@ -1,14 +1,32 @@
 
 
 
-<h1>   List Of Products  </h1>
+<h1>   List Of Products:  </h1>
+
 <div>
     {% for d in prod %}
        <h2><b>{{d.prod_name}} </b></h2>
-       <h3>Rs. {{d.prod_price}} </h3>
-       <h3>Quantity: {{d.prod_quantity}} </h3>
+       <h3> Rs. {{d.prod_price}} </h3>
+       <h3> Quantity: {{d.prod_quantity}} </h3>
        <a href = "flipkart/product">  </a>
        <hr>
 
     {% endfor %}
+</div>
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if Product_Display.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ Product_Display.previous_page_number }}">previous</a>
+        {% endif %}
+        <span class="current">
+            Page {{ Product_Display.number }} of {{ Product_Display.paginator.num_pages }}.
+        </span>
+        {% if Product_Display.has_next %}
+            <a href="?page={{ Product_Display.next_page_number }}">next</a>
+            <a href="?page={{ Product_Display.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
 </div>
